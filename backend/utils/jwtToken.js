@@ -9,10 +9,11 @@ const jwtToken = (userId, res) => {
   });
 
   res.cookie("jwt", token, {
-    maxAge: 30 * 24 * 60 * 60 * 1000,
-    httpOnly: true,
-    sameSite: "none",
-  });
+    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+    httpOnly: true, // Helps prevent XSS attacks
+    sameSite: "None", // Important for cross-site cookies
+    secure: true, // Only send cookie over HTTPS
+});
 };
 
 module.exports = {
