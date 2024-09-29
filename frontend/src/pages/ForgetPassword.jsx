@@ -52,7 +52,7 @@ export const ForgetPassword = () => {
     SetLoading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/frogetPassword",
+        "https://chatify-wols.onrender.com/api/frogetPassword",
         inputData,
         { withCredentials: true }
       );
