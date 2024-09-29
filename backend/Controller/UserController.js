@@ -1,5 +1,5 @@
 const { User } = require("../DataBase/Model/UserModel");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const dotenv = require("dotenv");
 const { jwtToken } = require("../utils/jwtToken");
 
