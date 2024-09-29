@@ -99,7 +99,7 @@ export const SingleGroupChat = () => {
   useEffect(() => {
     const getDetailOfGroupChat = async () => {
       const { data } = await axios.get(
-        `http://localhost:3000/api/getDetailsOfGroup/${id}`,
+        `https://chatify-wols.onrender.com/api/getDetailsOfGroup/${id}`,
         {
           withCredentials: true,
         }
@@ -115,7 +115,7 @@ export const SingleGroupChat = () => {
 
     const getAllMessage = async () => {
       const { data } = await axios.get(
-        `http://localhost:3000/api/fetchAllGroupChatMessage/${id}`,
+        `https://chatify-wols.onrender.com/api/fetchAllGroupChatMessage/${id}`,
         {
           withCredentials: true,
         }
@@ -217,7 +217,7 @@ export const SingleGroupChat = () => {
     ];
     SetSendLoading(true);
     const { data } = await axios.post(
-      "http://localhost:3000/api/sendMessageInGroupChat",
+      "https://chatify-wols.onrender.com/api/sendMessageInGroupChat",
       {
         sender: authUser._id,
         message: inputMessage,
