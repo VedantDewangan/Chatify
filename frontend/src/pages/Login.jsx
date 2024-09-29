@@ -51,7 +51,7 @@ export const Login = () => {
     SetLoginLoading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/login",
+        "https://chatify-wols.onrender.com/api/login",
         inputData,
         { withCredentials: true }
       );
@@ -77,7 +77,7 @@ export const Login = () => {
     SetLoginwithCredential(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/login",
+        "https://chatify-wols.onrender.com/api/login",
         {
           email: "test1@gmail.com",
           username: "test_01",
