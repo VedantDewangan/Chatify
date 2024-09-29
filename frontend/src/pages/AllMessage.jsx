@@ -38,7 +38,7 @@ export const AllMessage = () => {
       SetLoading(true);
       try {
         const { data } = await axios.get(
-          "http://localhost:3000/api/getAllConversations",
+          "https://chatify-wols.onrender.com/api/getAllConversations",
           { withCredentials: true }
         );
         SetMessage(data.allConversations);
