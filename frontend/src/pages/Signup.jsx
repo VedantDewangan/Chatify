@@ -111,7 +111,7 @@ export const Signup = () => {
       }
       // Now that the profile pic is uploaded, send data to backend
       const { data } = await axios.post(
-        "http://localhost:3000/api/register",
+        "https://chatify-wols.onrender.com/api/register",
         {
           name: inputData.name,
           username: inputData.username,
