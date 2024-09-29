@@ -36,7 +36,7 @@ export const SingleGroupChatDetail = () => {
     const getDetailOfGroupChat = async () => {
       SetFetchDataLoading(true);
       const { data } = await axios.get(
-        `http://localhost:3000/api/getDetailsOfGroup/${param.id}`,
+        `https://chatify-wols.onrender.com/api/getDetailsOfGroup/${param.id}`,
         {
           withCredentials: true,
         }
@@ -71,7 +71,7 @@ export const SingleGroupChatDetail = () => {
   const getMyAllFriend = async () => {
     onOpen1();
     const { data } = await axios.get(
-      "http://localhost:3000/api/getUserDetails",
+      "https://chatify-wols.onrender.com/api/getUserDetails",
       { withCredentials: true }
     );
     const a = data.Friends;
@@ -106,7 +106,7 @@ export const SingleGroupChatDetail = () => {
     }
     try {
       await axios.put(
-        "http://localhost:3000/api/addUser",
+        "https://chatify-wols.onrender.com/api/addUser",
         {
           groupID: details.id,
           users: selectedFriend,
@@ -151,7 +151,7 @@ export const SingleGroupChatDetail = () => {
     }
     try {
       await axios.put(
-        "http://localhost:3000/api/removeUser",
+        "https://chatify-wols.onrender.com/api/removeUser",
         {
           groupID: details.id,
           userID: id,
@@ -181,7 +181,7 @@ export const SingleGroupChatDetail = () => {
   const deleteGroup = async () => {
     SetDeleteLoading(true);
     try {
-      await axios.delete("http://localhost:3000/api/deleteGroup", {
+      await axios.delete("https://chatify-wols.onrender.com/api/deleteGroup", {
         data: { groupID: details.id }, // Correct way to send data with DELETE
         withCredentials: true,
       });
