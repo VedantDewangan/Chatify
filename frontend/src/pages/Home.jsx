@@ -57,7 +57,7 @@ export const Home = () => {
 
     try {
       const { data } = await axios.put(
-        "http://localhost:3000/api/changeProfilePic",
+        "https://chatify-wols.onrender.com/api/changeProfilePic",
         {
           username: authUser.username,
           newProfilePic: newProfilePic,
@@ -84,7 +84,7 @@ export const Home = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/newPassword",
+        "https://chatify-wols.onrender.com/api/newPassword",
         { newPassword: newPassword, username: authUser.username },
         { withCredentials: true }
       );
@@ -103,7 +103,7 @@ export const Home = () => {
   // logging out the user
   const logout = async () => {
     try {
-      await axios.post("http://localhost:3000/api/logout");
+      await axios.post("https://chatify-wols.onrender.com/api/logout");
       localStorage.clear();
       toast.success("Logout Successfully", {
         position: "top-right",
@@ -135,7 +135,7 @@ export const Home = () => {
         }
         SetLoadingSearch(true);
         const { data } = await axios.post(
-          `http://localhost:3000/api/searchUser?search=${searchInput}`,{},{withCredentials:true}
+          `https://chatify-wols.onrender.com/api/searchUser?search=${searchInput}`,{},{withCredentials:true}
         );
         SetLoadingSearch(false);
         SetSearching(true);
@@ -164,7 +164,7 @@ export const Home = () => {
   const sendFriendRequest = async (FriendId) => {
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/sendFriendRequest",
+        "https://chatify-wols.onrender.com/api/sendFriendRequest",
         {
           FriendId: FriendId,
         },
@@ -188,7 +188,7 @@ export const Home = () => {
   useEffect(() => {
     const getFriendReq = async () => {
       const { data } = await axios.get(
-        "http://localhost:3000/api/getAllFriendRequest",
+        "https://chatify-wols.onrender.com/api/getAllFriendRequest",
         { withCredentials: true }
       );
       setFriendReq(data.AllFriendRequest);
@@ -198,7 +198,7 @@ export const Home = () => {
 
   const declineFriendRequest = async (ID) => {
     try {
-      await axios.delete("http://localhost:3000/api/declineFriendRequest", {
+      await axios.delete("https://chatify-wols.onrender.com/api/declineFriendRequest", {
         data: { FriendId: ID }, // Sending the FriendId in the request body
         withCredentials: true,
       });
@@ -215,7 +215,7 @@ export const Home = () => {
   const acceptFriendRequest = async (ID) => {
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/acceptFriendRequest",
+        "https://chatify-wols.onrender.com/api/acceptFriendRequest",
         {
           FriendId: ID,
         },
