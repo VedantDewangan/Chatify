@@ -53,7 +53,7 @@ export const SingleMessage = () => {
   useEffect(() => {
     const getDetailOfConv = async () => {
       const { data } = await axios.get(
-        `http://localhost:3000/api/getDetailsOfConverstion/${id}`,
+        `https://chatify-wols.onrender.com/api/getDetailsOfConverstion/${id}`,
         {
           withCredentials: true,
         }
@@ -64,7 +64,7 @@ export const SingleMessage = () => {
     const getAllMessage = async () => {
       SetLoadingMessage(true);
       const { data } = await axios.get(
-        "http://localhost:3000/api/getAllMessage",
+        "https://chatify-wols.onrender.com/api/getAllMessage",
         {
           params: { FriendId: id },
           withCredentials: true,
@@ -365,7 +365,7 @@ export const SingleMessage = () => {
     });
     SetSendLoading(true);
     await axios.post(
-      "http://localhost:3000/api/sendMessage",
+      "https://chatify-wols.onrender.com/api/sendMessage",
       {
         senderID: authUser._id,
         reciverID: id,
