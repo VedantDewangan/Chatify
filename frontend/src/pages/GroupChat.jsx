@@ -59,7 +59,7 @@ export const GroupChat = () => {
   const openModal = async () => {
     SetSelectedUsers([]);
     const { data } = await axios.get(
-      "http://localhost:3000/api/getAllFriendsList",
+      "https://chatify-wols.onrender.com/api/getAllFriendsList",
       { withCredentials: true }
     );
     // console.log(data);
@@ -123,7 +123,7 @@ export const GroupChat = () => {
       }
 
       const { data } = await axios.post(
-        "http://localhost:3000/api/createGroupChat",
+        "https://chatify-wols.onrender.com/api/createGroupChat",
         {
           users: [...SelectedUsers, authUser._id],
           admin: authUser._id,
@@ -152,7 +152,7 @@ export const GroupChat = () => {
       SetLoading(true);
       try {
         const { data } = await axios.get(
-          "http://localhost:3000/api/fetchAllGroupChat",
+          "https://chatify-wols.onrender.com/api/fetchAllGroupChat",
           { withCredentials: true }
         );
         SetAllGroupChat(data.AllGroupChat);
